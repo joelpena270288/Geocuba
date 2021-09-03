@@ -16,7 +16,7 @@ export class PlanificadorService {
     result = stdout;
     console.log(result);
     return;
-   }));
+   });
      
    
     return result;
