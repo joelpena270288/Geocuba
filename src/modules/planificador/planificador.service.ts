@@ -18,16 +18,20 @@ export class PlanificadorService {
           if (error) {
             throw new BadRequestException(error);
           }
-          const salidacompleta: string[] = stdout.split('Cost:');
-          const salidaoptima: string[] = salidacompleta[1].split(':');
-          const salida: string[] = salidacompleta[1].split('\n');
-          result = await salida;
-          return salida;
+         
+          
+          return await this.picarSalida(stdout);
         },
       );
     } catch (e) {
       throw new BadRequestException(e);
     }
     return result;
+  }
+  async picarSalida(stdout):Promise<String[]>{
+    const salidacompleta: string[] = stdout.split('Cost:');
+    const salidaoptima: string[] = salidacompleta[1].split(':');
+    const salida: string[] = salidacompleta[1].split('\n');
+    return salida;
   }
 }
