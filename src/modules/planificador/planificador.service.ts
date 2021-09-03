@@ -13,10 +13,8 @@ export class PlanificadorService {
 
     const { stdout, stderr } = await exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain,pddl prueba.pddl');
   
-    if (!stdout) {
-      console.error(`error: ${stderr}`);
-    }
-    return stdout;
+    console.log('stdout:', stdout);
+    console.log('stderr:', stderr);
   }
  
 }
