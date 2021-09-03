@@ -9,15 +9,15 @@ import {
 } from '@nestjs/common';
 @Injectable()
 export class PlanificadorService {
-  getPlanPrueba() {
-    let result;
-      exec(
+  async getPlanPrueba(): Promise<any> {
+  
+     await exec(
       'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl',
-       function (error, stdout, stderr) {
+      async function (error, stdout, stderr) {
         if (error) {
           throw new BadRequestException(error);
         } else {
-          return stdout;
+          return await stdout;
         }
       },
     );
