@@ -12,13 +12,22 @@ export class PlanificadorService {
   async getPlanPrueba(): Promise<any> {
     let result;
     
-   await exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl',async funtion(error, stdout, stderr) => {
-   
-   
-    await devolverCadena(stdout) ;
-   });
+    await exec("cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl", 
+    async function(error: any, stdout: string, stderr: any){                                                                                    
+          
+    if(error){  
      
+      console.log("ERROR!!!!!!", error);
    
+    }else{                                                                                        
+      let salidacompleta: String[] = stdout.split("Cost:");
+      let  salidaoptima: String[] = salidacompleta[1].split(":");
+      let salida: String[] = salidacompleta[1].split("\n"); 
+     await devolverCadena(salida,res,req);
+    }
+  });
+
+ 
     
   }
  
