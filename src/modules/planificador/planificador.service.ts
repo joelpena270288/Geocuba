@@ -14,7 +14,7 @@ export class PlanificadorService {
     nombreProblema: string,
   ) {
     await exec(
-      "cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prue.pddl",
+      "cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl",
 
       async function (error, stdout, stderr) {
         if (error) {
