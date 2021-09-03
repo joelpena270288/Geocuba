@@ -17,10 +17,10 @@ export class PlanificadorService {
         if (error) {
           throw new BadRequestException(error);
         } else {
-          result = await stdout;
+          return stdout;
         }
       },
     );
-    return result;
+    
   }
 }
