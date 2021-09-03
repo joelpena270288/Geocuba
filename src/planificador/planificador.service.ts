@@ -19,7 +19,7 @@ export class PlanificadorService {
         ' ' +
         nombreDominio +
         '.pddl' +
-        '' +
+        ' ' +
         nombreProblema +
         '.pddl',
       async function (error: any, stdout: string, stderr: any) {
