@@ -22,11 +22,10 @@ export class PlanificadorService {
     
   }
  
- 
-}
-async devolverCadena(stdout): Promise<any>{
-  let salidacompleta: String[] = stdout.split("Cost:");
-  let  salidaoptima: String[] = salidacompleta[1].split(":");
-  let salida: String[] = salidacompleta[1].split("\n"); 
-  return salida;
+  async devolverCadena(stdout): Promise<any>{
+    let salidacompleta: String[] = stdout.split("Cost:");
+    let  salidaoptima: String[] = salidacompleta[1].split(":");
+    let salida: String[] = salidacompleta[1].split("\n"); 
+    return salida;
+  }
 }
