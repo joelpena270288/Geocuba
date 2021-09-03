@@ -19,6 +19,7 @@ export class PlanificadorService {
             return;
           }
           resolve(stdout);
+          return ;
         })
       })
     }
