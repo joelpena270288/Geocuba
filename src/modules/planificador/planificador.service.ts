@@ -12,7 +12,7 @@ export class PlanificadorService {
   async getPlanPrueba(
     nombreDominio: string,
     nombreProblema: string,
-  ): Promise<string> {
+  ) {
     await exec(
       'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp ' +
         ' ' +
