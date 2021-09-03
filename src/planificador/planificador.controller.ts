@@ -4,7 +4,7 @@ import {
   Get,
   Param,
   ParseIntPipe,
-  ParseUUIDPipe, 
+  ParseUUIDPipe,
   Post,
   UseGuards,
 } from '@nestjs/common';
@@ -24,7 +24,7 @@ export class PlanificadorController {
     );
   }
   @Get()
-  ping():Promise<string>{
-    return "Bienvenido al Planificador Optic";
+  ping(): string {
+    return 'Bienvenido al Planificador Optic';
   }
 }
