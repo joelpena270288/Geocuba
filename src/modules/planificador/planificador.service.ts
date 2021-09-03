@@ -9,27 +9,25 @@ import {
 } from '@nestjs/common';
 @Injectable()
 export class PlanificadorService {
-  async getPlanPrueba(): Promise<String[]> {
+  async getPlanPrueba(): Promise<string[]> {
     let result = [];
-    try{
+    try {
       await exec(
         'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl',
         async function (error, stdout, stderr) {
           if (error) {
             throw new BadRequestException(error);
           }
-          let salidacompleta: String[] = stdout.split("Cost:");
-          let  salidaoptima: String[] = salidacompleta[1].split(":");
-          let salida: String[] = salidacompleta[1].split("\n"); 
-          result = salida;
+          const salidacompleta: string[] = stdout.split('Cost:');
+          const salidaoptima: string[] = salidacompleta[1].split(':');
+          const salida: string[] = salidacompleta[1].split('\n');
+          result = await salida;
           return salida;
         },
       );
-    }catch(e){
+    } catch (e) {
       throw new BadRequestException(e);
     }
     return result;
-
-    }
-   
+  }
 }
