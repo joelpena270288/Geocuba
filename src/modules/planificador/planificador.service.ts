@@ -15,7 +15,7 @@ export class PlanificadorService {
   ): Promise<string> {
     let respuesta = '';
     await exec(
-      'cd /optic && ./optic-clp ' +
+      'cd ../../../src/optic && ./optic-clp ' +
         ' ' +
         nombreDominio +
         '.pddl' +

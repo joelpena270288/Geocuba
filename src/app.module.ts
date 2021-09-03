@@ -2,7 +2,7 @@ import { Configuration } from './config/config.key';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { HttpModule, Module } from '@nestjs/common';
-import { PlanificadorModule } from './planificador/planificador.module';
+import { PlanificadorModule } from './modules/planificador/planificador.module';
 @Module({
   imports: [ConfigModule, HttpModule, PlanificadorModule],
   controllers: [],
