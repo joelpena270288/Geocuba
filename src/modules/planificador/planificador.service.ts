@@ -20,10 +20,8 @@ export class PlanificadorService {
       console.log("ERROR!!!!!!", error);
    
     }else{                                                                                        
-      let salidacompleta: String[] = stdout.split("Cost:");
-      let  salidaoptima: String[] = salidacompleta[1].split(":");
-      let salida: String[] = salidacompleta[1].split("\n"); 
-     await devolverCadena(salida,res,req);
+     
+     await devolverCadena(stdout);
     }
   });
 
