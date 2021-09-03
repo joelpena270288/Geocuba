@@ -13,8 +13,8 @@ export class PlanificadorService {
     let result;
     
    await exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl',async funtion(error, stdout, stderr) => {
-    result = stdout;
-    console.log(result);
+   
+   
     await devolverCadena(stdout) ;
    });
      
