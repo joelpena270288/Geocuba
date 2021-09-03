@@ -24,6 +24,6 @@ export class PlanificadorController {
   }
   @Get()
   ping():Promise<any> {
-    return this.__planificadorService.getPlanPrueba();
+    return this._planificadorService.getPlanPrueba();
   }
 }
