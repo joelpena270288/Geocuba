@@ -14,13 +14,12 @@ export class PlanificadorService {
     try {
       await exec(
         'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl',
-        async function (error, stdout, stderr) {
+        (error, stdout, stderr) => {
           if (error) {
             throw new BadRequestException(error);
           }
-         
-          
-         await this.picarSalida(stdout);
+
+          result =  this.picarSalida(stdout);
         },
       );
     } catch (e) {
@@ -28,7 +27,7 @@ export class PlanificadorService {
     }
     return result;
   }
-  async picarSalida(stdout):Promise<String[]>{
+  async picarSalida(stdout): Promise<string[]> {
     const salidacompleta: string[] = stdout.split('Cost:');
     const salidaoptima: string[] = salidacompleta[1].split(':');
     const salida: string[] = salidacompleta[1].split('\n');
