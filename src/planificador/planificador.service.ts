@@ -1,6 +1,6 @@
 import { WriteStream, writeFileSync } from 'fs';
 import { v4 } from 'node-uuid';
-import { Injectable } from '@nestjs/common';
+
 import { exec, spawn } from 'child_process';
 import {
   BadRequestException,
