@@ -15,7 +15,7 @@ export class PlanificadorService {
   ): Promise<string> {
     let respuesta = '';
     await exec(
-      'cd ../../../src/optic && ./optic-clp ' +
+      'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp ' +
         ' ' +
         nombreDominio +
         '.pddl' +
