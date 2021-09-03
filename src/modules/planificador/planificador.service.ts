@@ -13,8 +13,7 @@ export class PlanificadorService {
     nombreDominio: string,
     nombreProblema: string,
   ): Promise<string> {
-    
-  let result =  await exec(
+    await exec(
       'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp ' +
         ' ' +
         nombreDominio +
@@ -30,7 +29,6 @@ export class PlanificadorService {
         }
       },
     );
-    return result;
-   
+    return "";
   }
 }
