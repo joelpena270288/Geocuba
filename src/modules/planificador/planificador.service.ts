@@ -18,8 +18,8 @@ export class PlanificadorService {
             reject(err);
             return;
           }
-          resolve(stdout);
-          return ;
+          
+          return stdout;
         })
       })
     }
