@@ -10,8 +10,7 @@ import {
 @Injectable()
 export class PlanificadorService {
   async getPlanPrueba(
-    nombreDominio: string,
-    nombreProblema: string,
+    
   ) {
     await exec(
       "cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl",

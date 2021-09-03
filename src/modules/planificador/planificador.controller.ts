@@ -19,12 +19,11 @@ export class PlanificadorController {
     @Param('nombreproblema') nombreproblema: string,
   ) {
     return this._planificadorService.getPlanPrueba(
-      nombredominio,
-      nombreproblema,
+     
     );
   }
   @Get()
-  ping(): string {
-    return 'Bienvenido al Planificador Optic';
+  ping():Promise<any> {
+    return this.__planificadorService.getPlanPrueba;
   }
 }
