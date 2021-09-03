@@ -22,6 +22,7 @@ export class PlanificadorService {
           let  salidaoptima: String[] = salidacompleta[1].split(":");
           let salida: String[] = salidacompleta[1].split("\n"); 
           result = salida;
+          return salida;
         },
       );
     }catch(e){
