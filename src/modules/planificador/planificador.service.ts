@@ -15,6 +15,8 @@ export class PlanificadorService {
   
     console.log('stdout:', stdout);
     console.log('stderr:', stderr);
+    return true;
   }
+ 
  
 }
