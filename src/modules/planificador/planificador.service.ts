@@ -16,10 +16,14 @@ export class PlanificadorService {
         'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl',
         (error, stdout, stderr) => {
           if (error) {
-            throw new BadRequestException(error);
-          }
-
-          return  this.picarSalida(stdout);
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
         },
       );
     } catch (e) {
