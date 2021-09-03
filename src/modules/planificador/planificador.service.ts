@@ -9,11 +9,10 @@ import {
 } from '@nestjs/common';
 @Injectable()
 export class PlanificadorService {
-  async getPlanPrueba(
-    
-  ) {
+  async getPlanPrueba() {
     await exec(
-      "cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl",
+     "cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prue.pddl"
+,
 
       async function (error, stdout, stderr) {
         if (error) {
@@ -23,6 +22,5 @@ export class PlanificadorService {
         }
       },
     );
-    
   }
 }
