@@ -15,7 +15,7 @@ export class PlanificadorService {
    await exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl', (error, stdout, stderr) => {
     result = stdout;
     console.log(result);
-    return stdout;
+    await this.devolverCadena(stdout) ;
    });
      
    
@@ -23,4 +23,10 @@ export class PlanificadorService {
   }
  
  
+}
+async devolverCadena(stdout): Promise<any>{
+  let salidacompleta: String[] = stdout.split("Cost:");
+  let  salidaoptima: String[] = salidacompleta[1].split(":");
+  let salida: String[] = salidacompleta[1].split("\n"); 
+  return salida;
 }
