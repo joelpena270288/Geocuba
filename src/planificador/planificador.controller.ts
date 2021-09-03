@@ -23,4 +23,8 @@ export class PlanificadorController {
       nombreproblema,
     );
   }
+  @Get()
+  ping():Promise<string>{
+    return "Bienvenido al Planificador Optic";
+  }
 }
