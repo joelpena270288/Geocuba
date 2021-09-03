@@ -20,7 +20,7 @@ export class PlanificadorService {
           }
          
           
-          return await this.picarSalida(stdout);
+         await this.picarSalida(stdout);
         },
       );
     } catch (e) {
