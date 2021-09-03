@@ -11,10 +11,10 @@ import {
 export class PlanificadorService {
   async getPlanPrueba(): Promise<any> {
 
-    const { stdout, stderr } = await exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain,pddl prueba.pddl');
+    const {error, stdout, stderr } = await exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain,pddl prueba.pddl');
   
-    if (stderr) {
-      console.error(`error: ${stderr}`);
+    if (error) {
+      console.error(`error: ${error}`);
     }
     return stdout;
   }
