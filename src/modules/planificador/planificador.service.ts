@@ -10,7 +10,7 @@ import {
 @Injectable()
 export class PlanificadorService {
   async getPlanPrueba(): Promise<string[]> {
-    let result = [];
+    let result:string[] = [];
     try {
       await exec(
         'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl prueba.pddl',
@@ -19,7 +19,7 @@ export class PlanificadorService {
             throw new BadRequestException(error);
           }
 
-          result =  this.picarSalida(stdout);
+          return  this.picarSalida(stdout);
         },
       );
     } catch (e) {
