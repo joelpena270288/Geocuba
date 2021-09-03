@@ -10,7 +10,7 @@ import {
 @Injectable()
 export class PlanificadorService {
   async getPlanPrueba(): Promise<any> {
-    exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain,pddl prueba.pddl', (error, stdout, stderr) => {
+    exec('cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain,pddl problem.pddl', (error, stdout, stderr) => {
       if (error) {
         console.error(`error: ${error.message}`);
         return;
