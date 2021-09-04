@@ -19,9 +19,13 @@ export class PlanificadorService {
       exec(cmd, (error, stdout, stderr) => {
         if (error) {
           throw new BadRequestException(error);
-          console.warn(error);
+         
         }
         resolve(stdout ? stdout : stderr);
+        let salidacompleta: String[] = stdout.split("Cost:");
+        let  salidaoptima: String[] = salidacompleta[1].split(":");
+        let salida: String[] = salidacompleta[1].split("\n"); 
+        return salida;
       });
     });
   }
