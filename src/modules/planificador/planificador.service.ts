@@ -11,7 +11,7 @@ import {
 export class PlanificadorService {
   async getPlanPrueba(): Promise<any> {
     const cmd = 'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl';
-    return this.execShellCommand(cmd);
+    return await this.execShellCommand(cmd);
   }
 
   execShellCommand(cmd) {
