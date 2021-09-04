@@ -21,11 +21,11 @@ export class PlanificadorService {
           throw new BadRequestException(error);
          
         }
-        resolve(stdout ? stdout : stderr);
         let salidacompleta: String[] = stdout.split("Cost:");
         let  salidaoptima: String[] = salidacompleta[1].split(":");
-        let salida: String[] = salidacompleta[1].split("\n"); 
-        return salida;
+        let salida: String[] = salidacompleta[1].split("\n");
+        resolve(salida ? salida : stderr);
+       
       });
     });
   }
