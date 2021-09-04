@@ -29,7 +29,7 @@ export class PlanificadorController {
     <html>
         
       <body>  
-      <div aling="center">
+      <div style="width:800px; margin:0 auto;">
       <h1>Bienvenido al servicio de Planificación</h1> 
        </div>
       </body>
