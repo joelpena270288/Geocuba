@@ -10,30 +10,19 @@ import {
 @Injectable()
 export class PlanificadorService {
   async getPlanPrueba(): Promise<any> {
-    let result;
-    
-    await exec("cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl", 
-    async function(error: any, stdout: string, stderr: any){                                                                                    
-          
-    if(error){  
-     
-      console.log("ERROR!!!!!!", error);
-   
-    }else{                                                                                        
-     
-     await devolverCadena(stdout);
-    }
-  });
-
- 
-    
+    const cmd =
+      'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl';
+    return this.execShellCommand(cmd);
   }
- 
 
-}
-export const  devolverCadena = async(stdout)=>{
-  let salidacompleta: String[] = stdout.split("Cost:");
-  let  salidaoptima: String[] = salidacompleta[1].split(":");
-  let salida: String[] = salidacompleta[1].split("\n"); 
-  return salida;
+  execShellCommand(cmd) {
+    return new Promise((resolve, reject) => {
+      exec(cmd, (error, stdout, stderr) => {
+        if (error) {
+          console.warn(error);
+        }
+        resolve(stdout ? stdout : stderr);
+      });
+    });
+  }
 }
