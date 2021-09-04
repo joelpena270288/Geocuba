@@ -29,8 +29,9 @@ export class PlanificadorController {
     <html>
         
       <body>  
+      <div aling="center">
       <h1>Bienvenido al servicio de Planificación</h1> 
-       
+       </div>
       </body>
     </html>
   ` ;
