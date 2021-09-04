@@ -18,6 +18,7 @@ export class PlanificadorService {
     return new Promise((resolve, reject) => {
       exec(cmd, (error, stdout, stderr) => {
         if (error) {
+          throw new BadRequestException(error);
           console.warn(error);
         }
         resolve(stdout ? stdout : stderr);
