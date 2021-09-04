@@ -19,11 +19,21 @@ export class PlanificadorController {
     @Param('nombreproblema') nombreproblema: string,
   ) {
     return this._planificadorService.getPlanPrueba(
-     
+      nombredominio, nombreproblema
     );
   }
   @Get()
   ping() {
-    return this._planificadorService.getPlanPrueba();
+   const html =`
+    <!doctype html>
+    <html>
+        
+      <body>  
+      <h1>Bienvenido al servicio de Planificación</h1> 
+       
+      </body>
+    </html>
+  ` ;
+    return html; 
   }
 }

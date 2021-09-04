@@ -9,8 +9,8 @@ import {
 } from '@nestjs/common';
 @Injectable()
 export class PlanificadorService {
-  async getPlanPrueba(): Promise<any> {
-    const cmd = 'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl';
+  async getPlanPrueba(nombredominio: string, nombreproblema: string): Promise<any> {
+    const cmd = 'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp'+nombredominio+".pddl"+" "+nombreproblema+".pddl";
     return await this.execShellCommand(cmd);
   }
 
