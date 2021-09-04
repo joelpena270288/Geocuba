@@ -8,6 +8,7 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
+import{Peticion} from './dto/peticion.dto';
 import { PlanificadorService } from './planificador.service';
 
 @Controller('planificador')
@@ -54,8 +55,8 @@ export class PlanificadorController {
     return html; 
   }
   @Post()
-  createPlan(@Body() domain: string,@Body() problem: string){
-    return this._planificadorService.createPlan(domain, problem);
+  createPlan(@Body() peticion: Peticion){
+    return this._planificadorService.createPlan(peticion.domain, peticion.problem);
 
   }
 }
