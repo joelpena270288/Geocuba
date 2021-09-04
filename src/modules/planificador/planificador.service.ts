@@ -49,10 +49,10 @@ export class PlanificadorService {
         if (error) {
           throw new BadRequestException(error);
         }
-        //const salidacompleta: string[] = stdout.split('Cost:');
-        //const salidaoptima: string[] = salidacompleta[1].split(':');
-        //const salida: string[] = salidacompleta[1].split('\n');
-        resolve(stdout ? stdout : stdout);
+        const salidacompleta: string[] = stdout.split('Cost:');
+        const salidaoptima: string[] = salidacompleta[1].split(':');
+        const salida: string[] = salidacompleta[1].split('\n');
+        resolve(salida ? salida : stderr);
       });
     });
   }
