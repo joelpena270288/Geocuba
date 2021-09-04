@@ -8,7 +8,7 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
-import{Peticion} from './dto/peticion.dto';
+import { Peticion } from './dto/peticion.dto';
 import { PlanificadorService } from './planificador.service';
 
 @Controller('planificador')
@@ -20,12 +20,13 @@ export class PlanificadorController {
     @Param('nombreproblema') nombreproblema: string,
   ) {
     return this._planificadorService.getPlanPrueba(
-      nombredominio, nombreproblema
+      nombredominio,
+      nombreproblema,
     );
   }
   @Get()
   ping() {
-   const html =`
+    const html = `
     <!doctype html>
     <html>
         
@@ -51,12 +52,14 @@ export class PlanificadorController {
      </div>
       </body>
     </html>
-  ` ;
-    return html; 
+  `;
+    return html;
   }
   @Post()
-  createPlan(@Body() peticion: Peticion){
-    return this._planificadorService.createPlan(peticion.domain, peticion.problem);
-
+  createPlan(@Body() peticion: Peticion) {
+    return this._planificadorService.createPlan(
+      peticion.domain,
+      peticion.problem,
+    );
   }
 }
