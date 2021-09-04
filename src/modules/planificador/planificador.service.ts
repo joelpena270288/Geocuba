@@ -10,8 +10,7 @@ import {
 @Injectable()
 export class PlanificadorService {
   async getPlanPrueba(): Promise<any> {
-    const cmd =
-      'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl';
+    const cmd = 'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp domain.pddl problem.pddl';
     return this.execShellCommand(cmd);
   }
 
