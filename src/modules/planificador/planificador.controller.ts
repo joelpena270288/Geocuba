@@ -57,13 +57,9 @@ export class PlanificadorController {
   }
   @Post()
   createPlan(@Body() peticion: Peticion) {
-   
-   
-   return this._planificadorService.createPlan(
+    return this._planificadorService.createPlan(
       peticion.domain,
       peticion.problem,
     );
-    
-    
   }
 }

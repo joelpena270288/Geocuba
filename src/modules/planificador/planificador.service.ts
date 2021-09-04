@@ -29,7 +29,7 @@ export class PlanificadorService {
     const dirdomain: string =
       '/home/ubuntu/Geocuba/src/optic/' + nombredominio + '.pddl';
     const dirproblem: string =
-      '/home/ubuntu/Geocuba/src/optic/' + nombredominio + '.pddl';
+      '/home/ubuntu/Geocuba/src/optic/' + nombreproblema + '.pddl';
     await writeFileSync(dirdomain, domain, { mode: 0o755 });
     await writeFileSync(dirproblem, problem, { mode: 0o755 });
     const cmd =
