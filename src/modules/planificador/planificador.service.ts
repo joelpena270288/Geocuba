@@ -10,7 +10,7 @@ import {
 @Injectable()
 export class PlanificadorService {
   async getPlanPrueba(nombredominio: string, nombreproblema: string): Promise<any> {
-    const cmd = 'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp'+nombredominio+".pddl"+" "+nombreproblema+".pddl";
+    const cmd = 'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp'+" " +nombredominio+".pddl"+" "+nombreproblema+".pddl";
     return await this.execShellCommand(cmd);
   }
 
