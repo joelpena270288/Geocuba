@@ -37,4 +37,9 @@ export class PlanificadorController {
   ` ;
     return html; 
   }
+  @Post()
+  createPlan(@Body() domain: string,@Body() problem: string){
+    return this._planificadorService.createPlan(domain, problem);
+
+  }
 }
