@@ -40,7 +40,7 @@ export class PlanificadorController {
       <p>Este servicio está desarrollado con el planificador OPTIC, el cual nos permite resolver problemas temporales.</p>
       <h2>Instrucciones para trabajar con el servicio</h2>
       <p>1- En el  EndPoint http://ec2-3-15-13-138.us-east-2.compute.amazonaws.com/api/planificador por el método POST debe introducir el dominio y problema en formato de texto</p>
-      <p>2- Por el metodo Get en el EndPoint http://ec2-3-15-13-138.us-east-2.compute.amazonaws.com/api/planificador pasando el nombre de un dominio y el nombre de un problema por parametro puedes ver una corrida del planificador se irán actualizando los juegos de dominios y problemas</p>
+      <p>2- Por el método Get en el EndPoint http://ec2-3-15-13-138.us-east-2.compute.amazonaws.com/api/planificador pasando el nombre de un dominio y el nombre de un problema por parametro puedes ver una corrida del planificador se irán actualizando los juegos de dominios y problemas</p>
       <h4>Ejemplo:</h4>
       <p>http://ec2-3-15-13-138.us-east-2.compute.amazonaws.com/api/planificador/domain/problem</p>
       
