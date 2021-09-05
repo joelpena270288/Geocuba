@@ -47,7 +47,8 @@ export class PlanificadorController {
       <p>http://ec2-3-15-13-138.us-east-2.compute.amazonaws.com/api/planificador/domain/problem</p>
       
       <p>3- La respuesta son las secuencias temporales de la solución en formato JSON</p>
-      
+      <h1>Puede visitar el sistema que aparece aqui</h1>
+      <a href=http://ec2-3-14-15-175.us-east-2.compute.amazonaws.com>Sistema Planificador OPTIC</a>
       
      </div>
       </body>
