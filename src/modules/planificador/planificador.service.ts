@@ -24,6 +24,8 @@ export class PlanificadorService {
     return await this.execShellCommand(cmd);
   }
   async createPlan(domain: string, problem: string): Promise<any> {
+    return domain;
+    /*
     const nombredominio = v4();
     const nombreproblema = v4();
     const dirdomain: string =
@@ -41,6 +43,7 @@ export class PlanificadorService {
       nombreproblema +
       '.pddl';
     return await this.execShellCommand(cmd);
+    */
   }
 
   execShellCommand(cmd) {
