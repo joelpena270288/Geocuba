@@ -70,7 +70,7 @@ export class PlanificadorService {
     });
   }
   borrarDatos(cmd) {
-    await exec(cmd, async function (error: any, stdout: string, stderr: any) {
+   exec(cmd, async function (error: any, stdout: string, stderr: any) {
       if (error) {
         console.log('ERROR!!!!!!', error);
       }
