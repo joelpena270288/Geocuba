@@ -31,7 +31,7 @@ export class PlanificadorService {
       '&& rm' +
       nombreproblema +
       '.pddl';
-   await this.borrarDatos(borrar);
+    this.borrarDatos(borrar);
     return result;
   }
   async createPlan(domain: string, problem: string): Promise<any> {
