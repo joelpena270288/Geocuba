@@ -1,4 +1,5 @@
 import { WriteStream, writeFileSync } from 'fs';
+import {htmlToText } from 'html-to-text';
 import { v4 } from 'node-uuid';
 
 import { exec, spawn } from 'child_process';
@@ -24,15 +25,17 @@ export class PlanificadorService {
     return await this.execShellCommand(cmd);
   }
   async createPlan(domain: string, problem: string): Promise<any> {
-    
+    const parser = new DOMParser();
+    const dominio = htmlToText(domain);
+    const problema = htmlToText(problem);
     const nombredominio = v4();
     const nombreproblema = v4();
     const dirdomain: string =
       '/home/ubuntu/Geocuba/src/optic/' + nombredominio + '.pddl';
     const dirproblem: string =
       '/home/ubuntu/Geocuba/src/optic/' + nombreproblema + '.pddl';
-    await writeFileSync(dirdomain, domain, { mode: 0o755 });
-    await writeFileSync(dirproblem, problem, { mode: 0o755 });
+    await writeFileSync(dirdomain, dominio, { mode: 0o755 });
+    await writeFileSync(dirproblem, problema, { mode: 0o755 });
     const cmd =
       'cd /home/ubuntu/Geocuba/src/optic/ && ./optic-clp' +
       ' ' +
