@@ -23,15 +23,7 @@ export class PlanificadorService {
       nombreproblema +
       '.pddl';
     const result = await this.execShellCommand(cmd);
-    const borrar =
-      'cd /home/ubuntu/Geocuba/src/optic/ && rm' +
-      ' ' +
-      nombredominio +
-      '.pddl' +
-      ' ' +
-      nombreproblema +
-      '.pddl';
-    await exec(borrar);
+   
     return result;
   }
   async createPlan(domain: string, problem: string): Promise<any> {
@@ -53,7 +45,18 @@ export class PlanificadorService {
       ' ' +
       nombreproblema +
       '.pddl';
-    return await this.execShellCommand(cmd);
+
+      const borrar =
+      'cd /home/ubuntu/Geocuba/src/optic/ && rm' +
+      ' ' +
+      nombredominio +
+      '.pddl' +
+      ' ' +
+      nombreproblema +
+      '.pddl';
+    await exec(borrar);
+    const result = this.execShellCommand(cmd)
+    return result;
   }
 
   execShellCommand(cmd) {
