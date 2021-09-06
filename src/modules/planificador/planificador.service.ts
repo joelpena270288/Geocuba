@@ -25,7 +25,7 @@ export class PlanificadorService {
     return await this.execShellCommand(cmd);
   }
   async createPlan(domain: string, problem: string): Promise<any> {
-    const parser = new DOMParser();
+   
     const dominio = htmlToText(domain);
     const problema = htmlToText(problem);
     const nombredominio = v4();
