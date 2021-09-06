@@ -55,7 +55,7 @@ export class PlanificadorService {
       nombreproblema +
       '.pddl';
    
-    const result = this.execShellCommand(cmd);
+    const result = await this.execShellCommand(cmd);
     await exec(borrar);
     return result;
   }
