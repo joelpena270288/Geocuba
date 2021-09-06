@@ -31,7 +31,7 @@ export class PlanificadorService {
       ' ' +
       nombreproblema +
       '.pddl';
-    this.borrarDatos(borrar);
+   await this.borrarDatos(borrar);
     return result;
   }
   async createPlan(domain: string, problem: string): Promise<any> {
@@ -69,8 +69,8 @@ export class PlanificadorService {
       });
     });
   }
-  borrarDatos(cmd) {
-    exec(cmd, async function (error: any, stdout: string, stderr: any) {
+ async  borrarDatos(cmd) {
+   await exec(cmd, async function (error: any, stdout: string, stderr: any) {
       if (error) {
         console.log('ERROR!!!!!!', error);
       }
