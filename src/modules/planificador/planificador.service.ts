@@ -28,7 +28,7 @@ export class PlanificadorService {
       ' ' +
       nombredominio +
       '.pddl' +
-      '&& rm' +
+      ' ' +
       nombreproblema +
       '.pddl';
     this.borrarDatos(borrar);
@@ -70,7 +70,7 @@ export class PlanificadorService {
     });
   }
   borrarDatos(cmd) {
-   exec(cmd, async function (error: any, stdout: string, stderr: any) {
+    exec(cmd, async function (error: any, stdout: string, stderr: any) {
       if (error) {
         console.log('ERROR!!!!!!', error);
       }
