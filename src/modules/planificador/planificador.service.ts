@@ -24,13 +24,7 @@ export class PlanificadorService {
       '.pddl';
     const result = await this.execShellCommand(cmd);
     const borrar =
-      'cd /home/ubuntu/Geocuba/src/optic/ && rm  ' +
-      ' ' +
-      nombredominio +
-      '.pddl' +
-      ' ' +
-      nombreproblema +
-      '.pddl';
+      'cd /home/ubuntu/Geocuba/src/optic/ && rm'+' ' +nombredominio +'.pddl' +' ' +nombreproblema +'.pddl';
    await this.borrarDatos(borrar);
     return result;
   }
@@ -74,6 +68,7 @@ export class PlanificadorService {
       if (error) {
         console.log('ERROR!!!!!!', error);
       }
+      return stdout;
     });
   }
 }
