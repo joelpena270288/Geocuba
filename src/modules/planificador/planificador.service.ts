@@ -1,5 +1,5 @@
 import { WriteStream, writeFileSync } from 'fs';
-import {htmlToText } from 'html-to-text';
+import { htmlToText } from 'html-to-text';
 import { v4 } from 'node-uuid';
 
 import { exec, spawn } from 'child_process';
@@ -22,10 +22,19 @@ export class PlanificadorService {
       ' ' +
       nombreproblema +
       '.pddl';
-    return await this.execShellCommand(cmd);
+    const result = await this.execShellCommand(cmd);
+    const borrar =
+      'cd /home/ubuntu/Geocuba/src/optic/ && rm  ' +
+      ' ' +
+      nombredominio +
+      '.pddl' +
+      '&& rm' +
+      nombreproblema +
+      '.pddl';
+    this.borrarDatos(borrar);
+    return result;
   }
   async createPlan(domain: string, problem: string): Promise<any> {
-   
     const dominio = htmlToText(domain);
     const problema = htmlToText(problem);
     const nombredominio = v4();
@@ -58,6 +67,13 @@ export class PlanificadorService {
         const salida: string[] = salidacompleta[1].split('\n');
         resolve(salida ? salida : stderr);
       });
+    });
+  }
+  borrarDatos(cmd) {
+    await exec(cmd, async function (error: any, stdout: string, stderr: any) {
+      if (error) {
+        console.log('ERROR!!!!!!', error);
+      }
     });
   }
 }
